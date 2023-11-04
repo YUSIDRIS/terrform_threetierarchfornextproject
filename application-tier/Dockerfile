@@ -15,4 +15,4 @@ COPY . /usr/src/app
 
 # Expose publc port and run npm command
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD [ "node", "index.js"]
