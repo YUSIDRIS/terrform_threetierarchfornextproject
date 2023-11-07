@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    tools {
+        nodejs 'node'
+    }
+    stages {
+        stage("init") {
+            steps {
+                script {
+                    gv = load "script.groovy"
+                }
+            }
+        }
+      
+       stage("build image") {
+            steps {
+                script {
+                    echo "building image"
+                    gv.buildImage()
+                }
+            }
+        }
+
+    }   
+}
